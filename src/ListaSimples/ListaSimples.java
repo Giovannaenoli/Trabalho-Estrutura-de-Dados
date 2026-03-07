@@ -65,6 +65,16 @@ public class ListaSimples {
         return true;
     }
 
+    //         @Override - joão adicionar o override depois, por favor
+    public String obter(int indice) {
+        if (indice < 0 || indice >= this.lista.length) {
+            return null;
+
+        }
+        return this.lista[indice];
+    }
+
+
     // Método que verifica se a lista está cheia
     public boolean estaCheia() {
 

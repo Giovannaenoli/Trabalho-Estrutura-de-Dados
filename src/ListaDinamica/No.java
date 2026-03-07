@@ -1,4 +1,4 @@
-package ListaDinâmica;
+package ListaDinamica;
 
 public class No {
 

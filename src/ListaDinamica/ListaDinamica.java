@@ -1,4 +1,4 @@
-package ListaDinâmica;
+package ListaDinamica;
 
 public class ListaDinamica {
 
@@ -95,6 +95,24 @@ public class ListaDinamica {
 
         return true;
     }
+    //    @Override - joão adicionar o override pliss
+    public String obter(int indice) {
+        if (indice < 0 || inicioEstaVazio()) {
+            return null;
+        }
+        No aux = this.inicio;
+        int posicao = 0;
+
+        while (aux != null && posicao < indice) {
+            aux = aux.getProx();
+            posicao++;
+        }
+        if (aux == null) {
+            return null;
+        }
+        return aux.getConteudo();
+    }
+
 
     // Método responsável por exibir os elementos da lista
     public void exibir() {
