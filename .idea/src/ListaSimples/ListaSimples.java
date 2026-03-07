@@ -31,6 +31,24 @@ public class ListaSimples {
             System.out.println("Elemento " + elemento + " adicionado com sucesso!");
         }
     }
+    //        @Override - joão adicionar o override depois, por favor
+    public int adicionarVarios(String[] elementos) {
+        int quantidadeAdicionada = 0; // Armazena quantos deram para adicionar
+
+        // percorre cada palavra do vetor
+        for (int i = 0; i < elementos.length; i++) {
+
+            // Se a lista não esta cheia, ele adiciona a palavra
+            if (!this.estaCheia()) {
+                this.adicionarElemento(elementos[i]);
+                quantidadeAdicionada++;
+
+            } else {
+                 break;
+            }
+        }
+        return quantidadeAdicionada;
+    }
 
     // Método que verifica se a lista está cheia
     public boolean estaCheia() {

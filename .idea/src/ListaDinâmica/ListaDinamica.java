@@ -42,6 +42,20 @@ public class ListaDinamica {
             aux.setProx(novoNo);
         }
     }
+    //    @Override - joão adicionar o override pliss
+    public int adicionarVarios(String[] elementos) {
+        int quantidadeAdicionada = 0;
+
+        // Lista dinâmica não tem limite de capacidade
+        for (int i = 0; i < elementos.length; i++) {
+            this.adicionarElemento(elementos[i]);
+
+            quantidadeAdicionada++;
+        }
+
+        // "@return Quantidade de elementos que foram realmente adicionados"
+        return quantidadeAdicionada;
+    }
 
     // Método responsável por exibir os elementos da lista
     public void exibir() {
