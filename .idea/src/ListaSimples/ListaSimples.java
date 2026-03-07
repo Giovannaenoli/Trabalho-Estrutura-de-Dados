@@ -50,6 +50,21 @@ public class ListaSimples {
         return quantidadeAdicionada;
     }
 
+    //        @Override - joão adicionar o override depois, por favor
+    public boolean inserir(int indice, String elemento) {
+        if (indice < 0 || indice >= this.lista.length) {
+            return false;
+        }
+        if (this.estaCheia()) {
+            return false;
+        }
+        for (int i = this.lista.length - 1; i > indice; i--) {
+            this.lista[i] = this.lista[i - 1];
+        }
+        this.lista[indice] = elemento;
+        return true;
+    }
+
     // Método que verifica se a lista está cheia
     public boolean estaCheia() {
 

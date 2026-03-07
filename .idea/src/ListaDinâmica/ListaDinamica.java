@@ -57,6 +57,45 @@ public class ListaDinamica {
         return quantidadeAdicionada;
     }
 
+    //    @Override - joão adicionar o override pliss
+    public boolean inserir(int indice, String elemento) {
+        if (indice < 0) {
+            return false;
+        }
+        // primeira posição
+        if (indice == 0) {
+            if (this.inicioEstaVazio()) {
+                this.inicio.setConteudo(elemento);
+            } else {
+
+                No noNovo = new No(this.inicio.getConteudo());
+                noNovo.setProx(this.inicio.getProx());
+                this.inicio.setConteudo(elemento);
+                this.inicio.setProx(noNovo);
+            }
+            return true;
+        }
+
+        No aux = this.inicio;
+        int posicao = 0;
+
+        // Simula um indice - 1
+        while (aux != null && posicao < indice - 1) {
+            aux = aux.getProx();
+            posicao++;
+        }
+
+        if (aux == null) {
+            return false;
+        }
+        No noNovo= new No(elemento);
+
+        noNovo.setProx(aux.getProx()); // O novo nó mantem a continuação da fila
+        aux.setProx(noNovo);           // O nó passado aponta para o nó novo
+
+        return true;
+    }
+
     // Método responsável por exibir os elementos da lista
     public void exibir() {
 
