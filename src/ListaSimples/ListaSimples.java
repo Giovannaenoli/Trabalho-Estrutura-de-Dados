@@ -1,6 +1,6 @@
 package ListaSimples;
 
-public class ListaSimples {
+public class ListaSimples implements ListaOperacoes {
 
     // Vetor de String que irá armazenar os elementos da lista
     String[] lista;
@@ -17,6 +17,8 @@ public class ListaSimples {
                 + tamanho + " posições disponíveis.");
     }
 
+    // PARTE PIETRA
+
     // Método para adicionar um elemento na lista
     public void adicionarElemento(String elemento) {
 
@@ -31,7 +33,8 @@ public class ListaSimples {
             System.out.println("Elemento " + elemento + " adicionado com sucesso!");
         }
     }
-    //        @Override - joão adicionar o override depois, por favor
+
+    @Override
     public int adicionarVarios(String[] elementos) {
         int quantidadeAdicionada = 0; // Armazena quantos deram para adicionar
 
@@ -44,13 +47,13 @@ public class ListaSimples {
                 quantidadeAdicionada++;
 
             } else {
-                 break;
+                break;
             }
         }
         return quantidadeAdicionada;
     }
 
-    //        @Override - joão adicionar o override depois, por favor
+    @Override
     public boolean inserir(int indice, String elemento) {
         if (indice < 0 || indice >= this.lista.length) {
             return false;
@@ -65,7 +68,7 @@ public class ListaSimples {
         return true;
     }
 
-    //         @Override - joão adicionar o override depois, por favor
+    @Override
     public String obter(int indice) {
         if (indice < 0 || indice >= this.lista.length) {
             return null;
@@ -74,6 +77,9 @@ public class ListaSimples {
         return this.lista[indice];
     }
 
+    // PARTE GIOVANNA
+
+    // PARTE DO JOÃO
 
     // Método que verifica se a lista está cheia
     public boolean estaCheia() {
