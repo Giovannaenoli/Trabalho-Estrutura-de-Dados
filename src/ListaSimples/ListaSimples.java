@@ -108,13 +108,27 @@ public class ListaSimples implements ListaOperacoes {
 
         String valorRemovido = this.lista[indice];
 
-        // Shift para a esquerda para não deixar buracos
+        // Puxo o da direita pra frente pra não ficar espaço vazio no meio
         for (int i = indice; i < this.lista.length - 1; i++) {
             this.lista[i] = this.lista[i + 1];
         }
 
         this.lista[this.lista.length - 1] = null;
         return valorRemovido;
+    }
+
+    //Método removerTodas()
+    @Override
+    public int removerTodas(String elemento) {
+        int removidos = 0;
+        for (int i = 0; i < this.lista.length; i++) {
+            if (this.lista[i] != null && this.lista[i].equals(elemento)) {
+                removerPorIndice(i);
+                i--; // Volta um para validar o novo elemento que ocupou a posição
+                removidos++;
+            }
+        }
+        return removidos;
     }
 
     // PARTE DO JOÃO
