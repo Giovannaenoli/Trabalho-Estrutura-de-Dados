@@ -91,6 +91,14 @@ public class ListaSimples implements ListaOperacoes {
         return contagem;
     }
 
+    //Método limpar()
+    @Override
+    public void limpar() {
+        for (int i = 0; i < this.lista.length; i++) {
+            this.lista[i] = null;
+        }
+    }
+
     // PARTE DO JOÃO
 
     // Método que verifica se a lista está cheia
