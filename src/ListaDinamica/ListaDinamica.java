@@ -173,6 +173,31 @@ public class ListaDinamica implements ListaOperacoes {
         return removido;
     }
 
+    //Método removerTodas()
+    @Override
+    public int removerTodas(String elemento) {
+        int total = 0;
+        if (inicioEstaVazio()) return 0;
+
+        // Primeiro verifica se o início tem o elemento repetido
+        while (!inicioEstaVazio() && this.inicio.getConteudo().equals(elemento)) {
+            removerPorIndice(0);
+            total++;
+        }
+
+        // Percorre o resto da corrente
+        No aux = this.inicio;
+        while (aux != null && aux.getProx() != null) {
+            if (aux.getProx().getConteudo().equals(elemento)) {
+                aux.setProx(aux.getProx().getProx());
+                total++;
+            } else {
+                aux = aux.getProx();
+            }
+        }
+        return total;
+    }
+
     // PARTE JOÃO
 
     public void exibir() {
