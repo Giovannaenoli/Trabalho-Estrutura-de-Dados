@@ -79,6 +79,18 @@ public class ListaSimples implements ListaOperacoes {
 
     // PARTE GIOVANNA
 
+    //Método contar()
+    @Override
+    public int contar() {
+        int contagem = 0;
+        for (int i = 0; i < this.lista.length; i++) {
+            if (this.lista[i] != null) {
+                contagem++;
+            }
+        }
+        return contagem;
+    }
+
     // PARTE DO JOÃO
 
     // Método que verifica se a lista está cheia
