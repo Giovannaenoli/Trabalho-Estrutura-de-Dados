@@ -134,12 +134,43 @@ public class ListaDinamica implements ListaOperacoes {
         return contador;
     }
 
-    // Método limpar()
+    //Método limpar()
     @Override
     public void limpar() {
-        // Basta zerar o conteúdo do início e tirar o ponteiro do próximo
+        //Basta zerar o conteúdo do início e tirar o ponteiro do próximo
         this.inicio.setConteudo(null);
         this.inicio.setProx(null);
+    }
+
+    //Método removerPorIndice()
+    @Override
+    public String removerPorIndice(int indice) {
+        if (indice < 0 || inicioEstaVazio()) return null;
+
+        // Se for o primeiro nó, pega o valor e muda o início para o próximo
+        if (indice == 0) {
+            String valor = this.inicio.getConteudo();
+            if (this.inicio.getProx() == null) {
+                this.inicio.setConteudo(null);
+            } else {
+                this.inicio = this.inicio.getProx();
+            }
+            return valor;
+        }
+
+        // Se for no meio ou fim, precisa encontrar quem vem ANTES do que eu quero tirar
+        No aux = this.inicio;
+        for (int i = 0; i < indice - 1 && aux != null; i++) {
+            aux = aux.getProx();
+        }
+
+        if (aux == null || aux.getProx() == null) return null;
+
+        String removido = aux.getProx().getConteudo();
+        // Faço o nó anterior apontar para o próximo do que eu estou deletando
+        aux.setProx(aux.getProx().getProx());
+
+        return removido;
     }
 
     // PARTE JOÃO
