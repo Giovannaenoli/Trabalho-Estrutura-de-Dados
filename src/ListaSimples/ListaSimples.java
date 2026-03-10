@@ -99,6 +99,24 @@ public class ListaSimples implements ListaOperacoes {
         }
     }
 
+    //Método removerPorIndice()
+    @Override
+    public String removerPorIndice(int indice) {
+        if (indice < 0 || indice >= this.lista.length || this.lista[indice] == null) {
+            return null;
+        }
+
+        String valorRemovido = this.lista[indice];
+
+        // Shift para a esquerda para não deixar buracos
+        for (int i = indice; i < this.lista.length - 1; i++) {
+            this.lista[i] = this.lista[i + 1];
+        }
+
+        this.lista[this.lista.length - 1] = null;
+        return valorRemovido;
+    }
+
     // PARTE DO JOÃO
 
     // Método que verifica se a lista está cheia
