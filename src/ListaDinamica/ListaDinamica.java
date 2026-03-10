@@ -119,6 +119,21 @@ public class ListaDinamica implements ListaOperacoes {
 
     // PARTE GIOVANNA
 
+    //Método contar()
+    @Override
+    public int contar() {
+        if (inicioEstaVazio()) return 0;
+
+        int contador = 0;
+        No aux = this.inicio;
+        // Passa de nó em nó até o fim
+        while (aux != null) {
+            contador++;
+            aux = aux.getProx();
+        }
+        return contador;
+    }
+
     // PARTE JOÃO
 
     public void exibir() {
