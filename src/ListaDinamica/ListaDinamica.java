@@ -134,6 +134,14 @@ public class ListaDinamica implements ListaOperacoes {
         return contador;
     }
 
+    // Método limpar()
+    @Override
+    public void limpar() {
+        // Basta zerar o conteúdo do início e tirar o ponteiro do próximo
+        this.inicio.setConteudo(null);
+        this.inicio.setProx(null);
+    }
+
     // PARTE JOÃO
 
     public void exibir() {
