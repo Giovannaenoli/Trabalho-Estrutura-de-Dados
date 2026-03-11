@@ -33,6 +33,6 @@ public class No {
 
     // Define qual será o próximo nó
     public void setProx(No prox) {
-        prox = prox;
+        this.prox = prox;
     }
 }

@@ -199,7 +199,29 @@ public class ListaDinamica implements ListaOperacoes {
     }
 
     // PARTE JOÃO
+    @Override
+    public int ultimoIndiceDe(String elemento) {
+    if (inicioEstaVazio()) {
+        return -1;
+    }
 
+    No aux = this.inicio;
+    int indice = 0;
+    int ultimoIndice = -1;
+
+    // percorre a lista 
+    while (aux != null) {
+        if (aux.getConteudo().equals(elemento)) {
+            ultimoIndice = indice;
+        }
+
+        aux = aux.getProx();
+        indice++;
+    }
+
+    return ultimoIndice;
+}
+    
     public void exibir() {
         if(inicioEstaVazio()) {
             System.out.println("Não existem elementos na lista dinâmica.");
