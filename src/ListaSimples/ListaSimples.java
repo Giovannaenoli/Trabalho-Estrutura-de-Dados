@@ -146,6 +146,20 @@ public class ListaSimples implements ListaOperacoes {
     return ultimoIndice;
     }
 
+    @Override
+    public int contarOcorrencias(String elemento) {
+
+    int contador = 0;
+
+    for (int i = 0; i < this.lista.length; i++) {
+        if (this.lista[i] != null && this.lista[i].equals(elemento)) {
+            contador++;
+        }
+    }
+
+    return contador;
+    }
+
 
 
     // Método que verifica se a lista está cheia
