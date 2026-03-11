@@ -132,6 +132,21 @@ public class ListaSimples implements ListaOperacoes {
     }
 
     // PARTE DO JOÃO
+    @Override
+    public int ultimoIndiceDe(String elemento) {
+
+    int ultimoIndice = -1;
+
+    for (int i = 0; i < this.lista.length; i++) {
+        if (this.lista[i] != null && this.lista[i].equals(elemento)) {
+            ultimoIndice = i;
+        }
+    }
+
+    return ultimoIndice;
+    }
+
+
 
     // Método que verifica se a lista está cheia
     public boolean estaCheia() {
