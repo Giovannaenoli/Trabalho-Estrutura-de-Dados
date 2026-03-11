@@ -160,6 +160,21 @@ public class ListaSimples implements ListaOperacoes {
     return contador;
     }
 
+    @Override
+    public int substituir(String antigo, String novo) {
+
+    int substituicoes = 0;
+
+    for (int i = 0; i < this.lista.length; i++) {
+        if (this.lista[i] != null && this.lista[i].equals(antigo)) {
+            this.lista[i] = novo;
+            substituicoes++;
+        }
+    }
+
+    return substituicoes;
+    }
+
 
 
     // Método que verifica se a lista está cheia
