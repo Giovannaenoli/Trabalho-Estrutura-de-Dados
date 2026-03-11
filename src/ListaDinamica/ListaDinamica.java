@@ -196,7 +196,7 @@ public class ListaDinamica implements ListaOperacoes {
             }
         }
         return total;
-    }
+    } 
 
     // PARTE JOÃO
     @Override
@@ -220,6 +220,26 @@ public class ListaDinamica implements ListaOperacoes {
     }
 
     return ultimoIndice;
+}
+
+@Override
+public int contarOcorrencias(String elemento) {
+    if (inicioEstaVazio()) {
+        return 0;
+    }
+
+    No aux = this.inicio;
+    int contador = 0;
+
+    while (aux != null) {
+        if (aux.getConteudo().equals(elemento)) {
+            contador++;
+        }
+
+        aux = aux.getProx();
+    }
+
+    return contador;
 }
     
     public void exibir() {
