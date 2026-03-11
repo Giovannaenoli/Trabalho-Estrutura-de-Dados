@@ -1,5 +1,7 @@
 package ListaSimples;
 
+import ListaOperacoes.ListaOperacoes;
+
 public class ListaSimples implements ListaOperacoes {
 
     // Vetor de String que irá armazenar os elementos da lista

@@ -1,5 +1,7 @@
 package ListaDinamica;
 
+import ListaOperacoes.ListaOperacoes;
+
 public class ListaDinamica implements ListaOperacoes {
 
     // Nó inicial da lista (ponto de entrada para todos os elementos)
@@ -296,7 +298,7 @@ public int substituir(String antigo, String novo) {
                             this.inicio = this.inicio.getProx();
                             return;
                         }
-                        else if(aux.getProx().getConteudo().equals(elemento)) {
+                        else if(aux.getProx() != null && aux.getProx().getConteudo().equals(elemento)) {
                             System.out.println("Elemento " + elemento + " removido!");
                             aux.setProx(aux.getProx().getProx());
                             return;
