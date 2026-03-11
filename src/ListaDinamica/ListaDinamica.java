@@ -241,6 +241,27 @@ public int contarOcorrencias(String elemento) {
 
     return contador;
 }
+
+@Override
+public int substituir(String antigo, String novo) {
+    if (inicioEstaVazio()) {
+        return 0;
+    }
+
+    No aux = this.inicio;
+    int substituicoes = 0;
+
+    while (aux != null) {
+        if (aux.getConteudo().equals(antigo)) {
+            aux.setConteudo(novo);
+            substituicoes++;
+        }
+
+        aux = aux.getProx();
+    }
+
+    return substituicoes;
+}
     
     public void exibir() {
         if(inicioEstaVazio()) {
